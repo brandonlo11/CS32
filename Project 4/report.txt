@@ -1,0 +1,37 @@
+My project is fully completed and I have not encountered any bugs.
+
+
+To begin testing, I created a map in my RadixTree class because I wished to implement that class last.
+
+
+For my PersonProfile class, I tested it by creating a PersonProfile and a number of AttValPairs. 
+
+I tested the GetName and GetEmail functions by calling print using them to make sure that they printed out the correct information.
+
+I tested the AddAttValPair function by calling it to add these AttValPairs to the PersonProfile. I then checked the vector I made to see if the vector I made had what it was supposed to have, which was strings made from the AddValPairs.
+
+I tested my GetNumAttValPairs function by calling the function on the PersonProfile I just added AttValPairs to to see if it returned the correct number.
+
+I tested my GetAttVal function by creating a for loop for to print out all the AttValPairs in the PresonProfile using the GetAttVal function. I then checked to make sure that everything printed as it should.
+
+
+For my Attribute Translator class, I just used the debugger to check that the vector returned by FindCompatibleAttValPairs contained what looked to be correct. 
+
+I didn't really test the load function, but it was apparent it worked after using the main function later in my testing.
+
+
+For my MemberDatabase class, I mostly just checked to make sure that the functions were returning what they were supposed to. 
+
+For FindMatchingMembers, I used the debugger to see the contents of the returned array to see that it contained what it was supposed to.
+
+For GetMemberByEmail, I simply checked to make sure that the returned pointer pointed to the right PersonProfile.
+
+I didn't really test the load function, but it was apparent it worked after using the main function later in my testing.
+
+
+For my MatchMaker class, I used the debugger to check that the contents of the vectors returned by IdentifyRankedMatches and getCompatibleAV looked correct. 
+
+Once these all looked correct, I used the provided main functions to make sure everything was working as it should.
+
+
+I then implemented the RadixTree. I mostly tested the different classes and functions independently. Most of my testing surrounded the insert function, which I tested by inserting different strings to see what the contents of the RadixTree would be after. I tested search just by checking that what it returned was correct.
