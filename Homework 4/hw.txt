@@ -1,0 +1,13 @@
+2a. There is not a given way to compare two Coords. Therefore, types like ints and doubles would work but Coords wouldn't. Passing classes into templates will sometimes cause errors.
+
+3e. The vector is being changed within the for loop which changes the location of the iterator. Therefore, the pointer is pointing to the wrong place. This does not happen for lists like test 2.
+
+4b. You wouldn't be able to build on the parameter path being passed back as a recursive function, which enables you to add "=>" to the string and print everything in order.
+
+5a. The time complexity is N^3 because there are 3 for loops iterating N times.
+
+5b. The time complexity in N^2 because there is a loop iterating N times and a loop within that iterating i times. Therefore, the loop will iterate 1, 2, 3 ... N times.
+
+6a. The time complexity is N^2 because you go through m which has N elements then insert into result, which would be an average of N/2.
+
+6b. You go through m once in this function, "rotating" the values. This would have a time complexity of N.
