@@ -1,0 +1,172 @@
+1.
+
+
+Public functions of my actor class (base class that all other classes are derived from):
+
+
+virtual void doSomething() - does nothing. I chose to make this virtual because every derived class has a doSomething function. I made it do nothing because blocks and pipes do nothing, and for other classes I made them have their own doSomething function.
+
+virtual void bonk() - does nothing. I chose to make this virtual because every derived class has a bonk function. I made it do nothing because some derived classes do nothing, and for other classes I made them have their own bonk function.
+
+bool checkAlive() - checks if an actor is alive. I kept this in the base class because all derived classes can be dead or alive.
+
+void makeDead() - sets an actors' isAlive boolean to false. I kept this in the base class because all derived classes can be made dead.
+
+StudentWorld* getWorld() - returns a pointer to the world an actor is in. I put this in the base class because all derived classes are in a world.
+
+bool checkOverlap(int x, int y) - checks if the point passed in overlaps an actor. I put this in the base class so it can be called in all derived classes.
+
+bool checkInLine(int y) - checks if an actor is within the row of the y coordinate passed in. This was to check if peach was in the same row as a piranha, but I declared it here so it could be used in other classes if needed.
+
+bool checkInVicinity(int x) - checks if an actor in within a certain distance from the x coordinate passed in. This was to check if peach was close enough to a piranha for it to shoot fire, but I declared it here so it could be used in other classes if needed.
+
+bool relation(int x, int y) - checks if an actor is left or right of the coordinate passed in. This was to check in peach was to the left or right of the piranha, but I declared it here so it could be used in other classes if needed.
+
+
+virtual bool getShare() - checks if an actor can share its space with other actors. I set it as default true, and those who couldn't share space I made separate getShare functions. This is virtual because all derived classes can either share their space or not.
+
+virtual bool getDamageable() - checks if an actor can be damaged. I set it as default false because most actors can't be damaged, and those who can I made a separate getDamageable function. This is virtual because all derived classes can either be damaged or not.
+
+virtual void damage() - hurts the actor. I declared this here because most derived classes can be damaged.
+
+
+Public functions of my inanimate class (base class for blocks and pipes):
+
+
+virtual bool getShare() - returns false. This is declared here because all of inanimate's derived classes cannot share it's space.
+
+
+
+Public functions of my enemy class (base class for koopas, goombas, and piranhas):
+
+
+virtual void doSomething() - declared here because koopas and goombas have the same doSomething. Piranha has its own.
+
+virtual void bonk() - declared here because goombas and piranhas have the same bonk function. Koopa has its own.
+
+bool touchedByPeach() - implementation for when an enemy overlaps with peach. It is declared here and not virtual because it is used in enemy's bonk and koopa's bonk.
+
+virtual bool getDamageable() - returns true. Declared here because all derived classes are damageable.
+
+
+Public function of my endpoint class (base class for flag and Mario):
+
+
+bool helper() - implementation if peach overlaps with an endpoint. Declared here because it is used by Mario and flag's doSomething function.
+
+
+Public function of my goodie class (base class for all power ups):
+
+
+void moveOrChangeDir() - implements the movement of goodies. Declared here because it is used by all power ups in their doSomething function.
+
+
+Public function of my fire class (base class for fireballs and shells):
+
+
+void moveOrChangeDir() - implements the movement of fires. Declared here because it is used by all fires in their doSomething function.
+
+
+Public functions of my peach class:
+
+
+virtual void doSomething() - peach has a unique doSomething, so this is implemented here.
+
+virtual void bonk() - peach has a unique bonk, so this is implemented here.
+
+virtual void damage() - peach has a unique damage, so this is implemented here.
+
+void falling() - checks if peach is falling. Declared here because it is not used by any other classes.
+
+void jumping() - checks if peach is jumping. Declared here because it is not used by any other classes.
+
+void jumpPower() - activates jump power. Declared here because it is not used by any other classes.
+
+void shootPower() - activates shoot power. Declared here because it is not used by any other classes.
+
+void starPower() - activates star power. Declared here because it is not used by any other classes.
+
+void setInvincibilityLeft(int x) - sets invincibility left to parameter. Declared here because it is not used by any other classes.
+
+bool getInvincibility() - returns whether peach is invincible. Declared here because it is not used by any other classes.
+
+void hitpoints(int x) - sets hitpoints to the parameter. Declared here because it is not used by any other classes.
+
+
+Public functions of the koopa class:
+
+
+virtual void bonk() - koopa has a unique bonk function.
+
+virtual void damage() - koopa has a unique damage function.
+
+void makeShell() - creates a shell. Declared here because it is not used by any other classes.
+
+
+Public functions of the piranha class:
+
+
+virtual void doSomething() - piranha has a unique doSomething method.
+
+
+Public functions of the shell class:
+
+
+virtual void doSomething() - piranha has a unique doSomething method.
+
+
+Public functions of the star class:
+
+
+virtual void doSomething() - star has a unique doSomething method.
+
+
+Public functions of the flower class:
+
+
+virtual void doSomething() - flower has a unique doSomething method.
+
+
+Public functions of the mushroom class:
+
+
+virtual void doSomething() - mushroom has a unique doSomething method.
+
+
+Public functions of the piranhafire class:
+
+
+virtual void doSomething() - piranhafire has a unique doSomething method.
+
+
+Public functions of the peachfire class:
+
+
+virtual void doSomething() - peachfire has a unique doSomething method.
+
+
+Public functions of the block class:
+
+
+virtual void bonk() - block has a unique bonk method.
+
+
+Public functions of the flag class:
+
+
+virtual void doSomething() - flag has a unique doSomething method.
+
+
+Public functions of the Mario class:
+
+
+virtual void doSomething() - Mario has a unique doSomething method.
+
+
+Pipe and Goomba don't have any public functions.
+
+
+2. My game is fully functional and has no known bugs.
+
+
+3. I couldn't find where it said to decrement the amount of lives, so I did that when I check if peach is dead in the move function.
