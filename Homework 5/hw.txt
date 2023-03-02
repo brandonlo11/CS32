@@ -1,0 +1,95 @@
+1a.
+					50
+		20				   60
+	10		40					70
+	    15	    30					 64 		80
+		 23    36					    75	    
+
+1b. 
+
+Inorder: 10, 15, 20, 23, 30, 36, 40, 50, 60, 64, 70, 75, 80
+
+Preorder: 50, 20, 10, 15, 40, 30, 23, 36, 60, 70, 64, 80, 75
+
+Postorder: 15, 10, 23, 36, 30, 40, 20, 64, 75, 80, 70, 60, 50
+
+1c. 
+
+Two options for deleting node 30. One way:
+
+					50
+		20				   60
+	10		40					70
+	    15	    36					 64 		80
+		 23    					    	    75	 
+
+Also two options for deleting node 20. One way:
+
+					50
+		23				   60
+	10		40					70
+	    15	    36					 64 		80
+		     					    	    75	 
+
+2a.
+
+struct Node
+{
+Node(int Val)
+{
+	value = Val;
+	parent = left = right = nullptr;
+}
+int value;
+Node *parent,*left,*right;
+};
+
+2b.
+
+Function will take an integer parameter (I'll call it val) and node pointer parameter (I'll call it (npointer) and return a node pointer
+
+If npointer is null
+	Create a new node at npointer
+	Set the value of the node equal to val
+	return npointer
+Else if val equals the value of npointer
+	return node
+Else if val is less than the value of npointer
+	if the left child pointer of npointer is null
+		set left child pointer of npointer to point to new node with the value of val and set the parent pointer of this new node to npointer
+		return the left child pointer of the node npointer points to
+	else
+		return a recursive call to the function with parameters of val and the left child pointer of the node npointer points to
+Else if val is greater than the value of npointer
+	if the right child pointer of npointer is null
+		set right child pointer of npointer to point to new node with the value of val and set the parent pointer of this new node to npointer
+		return the right child pointer of the node npointer points to
+	else
+		return a recursive call to the function with parameters of val and the right child pointer of the node npointer points to
+
+3a.
+
+					7
+			5				6
+		3		1		2
+
+3b. 
+
+It would be an array with the following contents:
+
+[7, 5, 6, 3, 1, 2]
+
+3c.
+
+					6
+			5				2
+		3		1
+
+4a. O(C + S)
+4b. O(S)
+4c. O(log S)
+4d. O(log S)
+4e. O(1)
+4f. O(S)
+4g. O(S + S log S)
+4h. O(C * S)
